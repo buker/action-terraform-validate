@@ -7,7 +7,7 @@ if [ -n "${GITHUB_WORKSPACE}" ] ; then
 fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
-
+tfswitch -b "${INPUT_TERRAFORM_VERSION}"
 terraform init -backend=false
 # shellcheck disable=SC2086
 terraform validate -json \
